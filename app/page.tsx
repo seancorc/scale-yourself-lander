@@ -1,4 +1,4 @@
-import { PersonStanding, Upload, MessageSquare, Users, ChevronRight, Brain } from "lucide-react"
+import { PersonStanding, Upload, MessageSquare, Users, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ContactForm } from "@/components/contact-form"
