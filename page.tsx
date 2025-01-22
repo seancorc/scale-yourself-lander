@@ -1,4 +1,4 @@
-import { Brain, Upload, MessageSquare, Users, ChevronRight } from "lucide-react"
+import { Brain, Upload, MessageSquare, Users, ChevronRight, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
@@ -7,7 +7,11 @@ export default function LandingPage() {
     <div className="flex flex-col min-h-screen">
       <header className="px-4 lg:px-6 h-16 flex items-center border-b">
         <Link className="flex items-center justify-center" href="/">
-          <Brain className="h-6 w-6 text-primary" />
+          <div className="flex items-center">
+            <Users className="h-6 w-6 text-primary" />
+            <ArrowRight className="h-4 w-4 text-primary ml-[-3px]" />
+            <Users className="h-8 w-8 text-primary" />
+          </div>
           <span className="ml-2 text-xl font-bold">ScaleYourself</span>
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6">
@@ -34,16 +38,23 @@ export default function LandingPage() {
                   Transform your expertise into a personal AI assistant that delivers your coaching methodology 24/7
                 </p>
               </div>
-              <div className="space-x-4">
+              <div className="space-y-6">
                 <Button className="inline-flex h-9 items-center justify-center" size="lg">
-                  Get Started
+                  Get In Early
                   <ChevronRight className="ml-2 h-4 w-4" />
                 </Button>
-                <Button variant="outline" size="lg">
-                  View Demo
-                </Button>
+                <p className="text-sm text-muted-foreground max-w-[600px] mx-auto">
+                  ScaleYourself is in Beta right now. Click the button above to become a design partner and get a free
+                  AI assistant tailored to your practice.
+                </p>
               </div>
             </div>
+          </div>
+          <div className="mt-12 w-full max-w-3xl mx-auto rounded-lg overflow-hidden shadow-xl">
+            <video controls className="w-full aspect-video" poster="/placeholder.svg?height=720&width=1280">
+              <source src="https://your-video-url.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </section>
         <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">

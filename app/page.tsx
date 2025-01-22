@@ -1,130 +1,114 @@
-import { PersonStanding, Upload, MessageSquare, Users, ChevronRight } from "lucide-react"
+import { Upload, Blocks, Users, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { ContactForm } from "@/components/contact-form"
+import { EmailDialog } from "@/components/email-dialog"
+
 
 export default function LandingPage() {
+  const subject = "ScaleYourself Beta Access"
+  const body = `I am interested in ScaleYourself and would like to learn more about it.
+(feel free to just send as-is & I'll get back to you shortly)`
+
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="px-4 lg:px-6 h-16 flex items-center border-b">
+      <header className="relative px-4 lg:px-6 h-16 flex items-center justify-center border-b">
         <Link className="flex items-center justify-center" href="/">
-          <PersonStanding className="h-6 w-6 text-primary" />
-          <span className="ml-2 text-xl font-bold">ScaleYourself</span>
+          <span className="text-2xl font-bold">ScaleYourself</span>
         </Link>
-        <nav className="ml-auto flex gap-4 sm:gap-6">
+        {/* Desktop Navigation */}
+        <nav className="absolute right-12 hidden md:flex gap-6">
           <Link className="text-sm font-medium hover:underline underline-offset-4" href="#features">
             Features
           </Link>
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#how-it-works">
-            How It Works
-          </Link>
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#contact">
-            Contact
-          </Link>
+          <EmailDialog 
+            trigger={
+              <button className="text-sm font-medium hover:underline underline-offset-4">
+                Contact
+              </button>
+            }
+            subject={subject}
+            body={body}
+          />
         </nav>
       </header>
       <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+        <section className="w-full py-[3vh]">
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center space-y-4 text-center">
+            <Users className="justify-center h-10 w-10 lg:h-12 lg:w-12 text-primary transform scale-x-[-1]" />
               <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-                  Scale Your Coaching Impact with AI
+                <h1 className="font-bold tracking-tighter text-3xl lg:text-5xl">
+                  Scale Your Coaching Impact
                 </h1>
                 <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-                  Transform your expertise into a personal AI assistant that delivers your coaching methodology 24/7
+                  Your AI assistant that delivers your coaching methodology 24/7
                 </p>
               </div>
-              <div className="space-x-4">
-                <Link href="mailto:seancorcoran45@gmail.com?subject=Interested%20in%20ScaleYourself">
-                  <Button className="inline-flex h-9 items-center justify-center" size="lg">
-                    Get Started
-                    <ChevronRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-                <Link href="https://seangpt-sean-corcorans-projects.vercel.app/" target="_blank">
-                  <Button variant="outline" size="lg">
-                    View Demo
-                  </Button>
-                </Link>
+              <div className="space-y-4">
+                <EmailDialog 
+                  trigger={
+                    <Button className="inline-flex h-9 items-center justify-center" size="lg">
+                      Get In early
+                      <ChevronRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  }
+                  subject={subject}
+                  body={body}
+                />
+                <p className="text-sm text-muted-foreground max-w-[600px] mx-auto">
+                  *ScaleYourself is in Beta right now. Click above to become a design partner & get a free
+                  AI assistant tailored to your coaching practice
+                </p>
               </div>
             </div>
+          </div>
+          <div className="mt-12 w-4/5 lg:w-full max-w-3xl mx-auto rounded-lg overflow-hidden shadow-xl">
+            <video controls className="justify-center w-full aspect-video" poster="/placeholder.svg?height=720&width=1280">
+              <source src="https://your-video-url.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </section>
         <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid gap-10 px-10 md:gap-16 lg:grid-cols-2">
               <div className="space-y-4">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                <h2 className="text-center text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                   Your Expertise, Amplified
                 </h2>
-                <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                <p className="text-center max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
                   Transform your coaching methodology into an AI-powered assistant that delivers personalized guidance
                   to your clients, exactly how you would.
                 </p>
               </div>
               <div className="grid gap-4 md:gap-8">
                 <div className="flex items-start space-x-4">
-                  <Upload className="mt-1 h-6 w-6 text-primary" />
+                  <Upload className="mt-1 h-12 w-12 lg:h-6 lg:w-6 text-primary" />
                   <div className="space-y-2">
-                    <h3 className="text-xl font-bold">Easy Content Upload</h3>
+                    <h3 className="text-xl font-bold">Step 1 - Upload Your Content</h3>
                     <p className="text-gray-500 dark:text-gray-400">
-                      Upload your training guides, plans, and videos to train your AI assistant with your unique
-                      approach
+                      Upload your training plans, videos, articles, etc. to give your AI access to your unique approach
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <MessageSquare className="mt-1 h-6 w-6 text-primary" />
+                  <Blocks className="mt-1 h-12 w-12 lg:h-6 lg:w-6 text-primary" />
                   <div className="space-y-2">
-                    <h3 className="text-xl font-bold">Custom Interactions</h3>
+                    <h3 className="text-xl font-bold">Step 2 - Train your AI</h3>
                     <p className="text-gray-500 dark:text-gray-400">
-                      Create custom FAQs and responses that reflect your coaching style and methodology
+                      Our quick & easy training process will ensure your AI sounds & coaches like you
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <Users className="mt-1 h-6 w-6 text-primary" />
+                  <Users className="mt-1 h-12 w-12 lg:h-6 lg:w-6 text-primary" />
                   <div className="space-y-2">
-                    <h3 className="text-xl font-bold">Scale Your Impact</h3>
+                    <h3 className="text-xl font-bold">Step 3 -  Scale Your Impact</h3>
                     <p className="text-gray-500 dark:text-gray-400">
-                      Provide 24/7 personalized coaching support while focusing on high-impact client interactions
+                      Provide 24/7 personalized coaching support while focusing all your time on high-impact client interactions
                     </p>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section id="how-it-works" className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">How It Works</h2>
-                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                  Three simple steps to create your personal AI coaching assistant
-                </p>
-              </div>
-            </div>
-            <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-3 lg:gap-12">
-              <div className="flex flex-col justify-center space-y-4 border rounded-lg p-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-white">1</div>
-                <h3 className="text-xl font-bold">Upload Your Content</h3>
-                <p className="text-gray-500 dark:text-gray-400">
-                  Share your training materials, methodologies, and expertise
-                </p>
-              </div>
-              <div className="flex flex-col justify-center space-y-4 border rounded-lg p-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-white">2</div>
-                <h3 className="text-xl font-bold">Customize Your AI</h3>
-                <p className="text-gray-500 dark:text-gray-400">
-                  Train your AI to match your coaching style and approach
-                </p>
-              </div>
-              <div className="flex flex-col justify-center space-y-4 border rounded-lg p-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-white">3</div>
-                <h3 className="text-xl font-bold">Launch & Scale</h3>
-                <p className="text-gray-500 dark:text-gray-400">Provide 24/7 personalized coaching to more clients</p>
               </div>
             </div>
           </div>
@@ -141,26 +125,15 @@ export default function LandingPage() {
                 </p>
               </div>
               <div className="space-x-4">
-                <Link href="https://calendly.com/seancorcoran45/">
-                  <Button variant="secondary" size="lg">
-                    Schedule a Demo
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section id="contact" className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Contact Us</h2>
-                <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                  Want to learn more about how ScaleYourself can help your coaching business?
-                </p>
-              </div>
-              <div className="w-full max-w-sm space-y-2">
-                <ContactForm />
+              <EmailDialog 
+            trigger={
+              <Button variant="secondary" size="lg">
+                Become a Design Partner
+              </Button>
+            }
+            subject={subject}
+            body={body}
+          />            
               </div>
             </div>
           </div>
