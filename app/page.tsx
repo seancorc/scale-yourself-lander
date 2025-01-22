@@ -73,10 +73,10 @@ export default function LandingPage() {
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid gap-10 px-10 md:gap-16 lg:grid-cols-2">
               <div className="space-y-4">
-                <h2 className="text-center text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                <h2 className="text-center lg:text-left text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                   Your Expertise, Amplified
                 </h2>
-                <p className="text-center max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                <p className="text-center lg:text-left max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
                   Transform your coaching methodology into an AI-powered assistant that delivers personalized guidance
                   to your clients, exactly how you would.
                 </p>
