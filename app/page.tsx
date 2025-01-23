@@ -41,7 +41,8 @@ export default function LandingPage() {
                   Scale Your Coaching Impact
                 </h1>
                 <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-                  Focus on high-impact client interactions & let AI do the rest
+                  More clients. Happier clients. Less busy work. <br />
+                  Experience the power of AI coaching assistants
                 </p>
               </div>
               <div className="space-y-4">
