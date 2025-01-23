@@ -15,8 +15,16 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Scale Yourself",
-  description: "Scale your impact",
+  title: 'ScaleYourself - AI Coaching Assistant',
+  description: 'More clients. Happier clients. Less busy work.',
+  openGraph: {
+    title: 'ScaleYourself - AI Coaching Assistant',
+    description: 'More clients. Happier clients. Less busy work.',
+    url: 'https://scaleyourself.co',
+    siteName: 'ScaleYourself',
+    locale: 'en_US',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({
