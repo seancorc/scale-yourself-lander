@@ -109,7 +109,7 @@ export default function LandingPage() {
                   <div className="space-y-2">
                     <h3 className="text-xl font-bold">Step 3 -  Scale Your Impact</h3>
                     <p className="text-gray-500 dark:text-gray-400">
-                      Provide 24/7 personalized coaching support while focusing all your time on high-impact client interactions
+                      Your AI provides 24/7 personalized coaching support to your clients enabling you to take on more clients & focus on more high-impact work
                     </p>
                   </div>
                 </div>
