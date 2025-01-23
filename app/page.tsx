@@ -65,7 +65,7 @@ export default function LandingPage() {
           <div className="mt-12 w-4/5 lg:w-full max-w-3xl mx-auto rounded-lg overflow-hidden shadow-xl">
           <div style={{ position: 'relative', paddingBottom: '55%', height: 0 }}>
                 <iframe 
-                  src="https://www.loom.com/embed/c3c0e74f6e304e7a9fcd2545495c8afc?sid=8d1d0a67-db68-4473-8543-4f18678e0acb" 
+                  src="https://www.loom.com/embed/043ebe329b1548aea5c101bd5997915c?sid=3a88d0b3-0160-4947-afdc-5bcf2b6c678b" 
                   allowFullScreen 
                   style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
                 ></iframe>
