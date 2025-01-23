@@ -42,7 +42,7 @@ export default function LandingPage() {
                 </h1>
                 <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
                   More clients. Happier clients. Less busy work. <br />
-                  Experience the power of AI coaching assistants
+                  Experience the power of an AI you
                 </p>
               </div>
               <div className="space-y-4">
