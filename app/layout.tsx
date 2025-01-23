@@ -16,7 +16,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Scale Yourself",
-  description: "Scale your coaching impact with AI",
+  description: "Scale your impact",
 };
 
 export default function RootLayout({

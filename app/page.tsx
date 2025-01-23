@@ -41,7 +41,7 @@ export default function LandingPage() {
                   Scale Your Coaching Impact
                 </h1>
                 <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-                  Your AI assistant that delivers your coaching methodology 24/7
+                  Focus on high-impact client interactions & let AI do the rest
                 </p>
               </div>
               <div className="space-y-4">
@@ -63,10 +63,13 @@ export default function LandingPage() {
             </div>
           </div>
           <div className="mt-12 w-4/5 lg:w-full max-w-3xl mx-auto rounded-lg overflow-hidden shadow-xl">
-            <video controls className="justify-center w-full aspect-video" poster="/placeholder.svg?height=720&width=1280">
-              <source src="https://your-video-url.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          <div style={{ position: 'relative', paddingBottom: '55%', height: 0 }}>
+                <iframe 
+                  src="https://www.loom.com/embed/c3c0e74f6e304e7a9fcd2545495c8afc?sid=8d1d0a67-db68-4473-8543-4f18678e0acb" 
+                  allowFullScreen 
+                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
+                ></iframe>
+              </div>
           </div>
         </section>
         <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
