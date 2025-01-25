@@ -14,17 +14,6 @@ interface EmailDialogProps {
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
-// Add type definition for gtag
-declare global {
-  interface Window {
-    gtag: (
-      type: string,
-      action: string,
-      params?: Record<string, any>
-    ) => void;
-  }
-}
-
 export function EmailDialog({ trigger, subject, body }: EmailDialogProps) {
   const [email, setEmail] = useState("")
   const [open, setOpen] = useState(false)
@@ -51,9 +40,9 @@ export function EmailDialog({ trigger, subject, body }: EmailDialogProps) {
       })
 
       if (response.ok) {
-        // Track successful conversion
-        window.gtag?.('event', 'conversion', {
-          'send_to': 'AW-16833057033/5Y5XCJfB1pEaEImi0No-'
+        // Using properly typed gtag
+        gtag('event', 'conversion', {
+          send_to: 'AW-16833057033/5Y5XCJfB1pEaEImi0No-'
         });
 
         setStatus('success')
